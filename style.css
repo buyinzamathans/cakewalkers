@@ -1,0 +1,117 @@
+/* Reset and Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #0a0a0a; /* Dark background */
+    color: #ffffff;
+    font-family: 'Montserrat', sans-serif;
+    -webkit-font-smoothing: antialiased;
+}
+
+/* Hero Section Container */
+.hero-section {
+    position: relative;
+    height: 100vh;
+    min-height: 600px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 20px;
+    
+    /* ADD YOUR BACKGROUND IMAGE HERE */
+    /* Example: background-image: url('images/IMG-20260801-WA0014.jpg'); */
+    background-color: #111; 
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* Subtle dark gradient overlay to make the text pop */
+.hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, rgba(0,0,0,0.6) 0%, rgba(0,0,0,0.8) 100%);
+    z-index: 1;
+}
+
+/* Ensure content stays above the overlay */
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 600px;
+    width: 100%;
+}
+
+/* Typography Details */
+.location-tag {
+    font-size: 0.75rem;
+    letter-spacing: 4px;
+    color: #e5b95c; /* Soft gold */
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+}
+
+.main-title {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    font-weight: 400;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+}
+
+.main-title .highlight {
+    font-style: italic;
+    color: #e5b95c; /* Matches the golden highlight in the screenshot */
+}
+
+.hero-description {
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #cccccc;
+    margin-bottom: 2.5rem;
+    font-weight: 300;
+}
+
+/* The Call to Action Button */
+.whatsapp-btn {
+    display: inline-block;
+    background-color: #e5b95c;
+    color: #111111;
+    text-decoration: none;
+    padding: 15px 40px;
+    border-radius: 50px; /* Pill shape */
+    font-size: 0.85rem;
+    font-weight: 500;
+    letter-spacing: 2px;
+    margin-bottom: 3rem;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.whatsapp-btn:hover {
+    background-color: #d4af37;
+    transform: translateY(-2px);
+}
+
+/* Bottom Scroll Text */
+.view-collection {
+    display: block;
+    color: #888888;
+    text-decoration: none;
+    font-size: 0.75rem;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    transition: color 0.3s ease;
+}
+
+.view-collection:hover {
+    color: #ffffff;
+}
