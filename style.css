@@ -13,7 +13,7 @@ body {
     -moz-osx-font-smoothing: grayscale;
 }
 
-/* Hero Section Container */
+/* Hero Section Container (Default: Laptop / Wide View) */
 .hero-section {
     position: relative;
     height: 100vh;
@@ -25,7 +25,7 @@ body {
     text-align: center;
     padding: 0 20px;
     
-    /* LIGHTER OVERLAYS: Reduced opacity so the background image is brighter */
+    /* Laptop Background Image */
     background-image: 
         linear-gradient(to bottom, rgba(15, 15, 15, 0.2) 0%, rgba(10, 10, 10, 0.5) 100%),
         radial-gradient(circle at center, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.4) 100%),
@@ -34,6 +34,20 @@ body {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+}
+
+/* Media Query for Mobile Devices (screens 768px wide and below) */
+@media (max-width: 768px) {
+    .hero-section {
+        /* Mobile Background Image (Replace 'mobile-bg.png' with your mobile image filename) */
+        background-image: 
+            linear-gradient(to bottom, rgba(15, 15, 15, 0.3) 0%, rgba(10, 10, 10, 0.6) 100%),
+            radial-gradient(circle at center, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.5) 100%),
+            url('mobile-bg.png');
+        
+        background-size: cover;
+        background-position: center;
+    }
 }
 
 /* Hero Content Wrapper */
@@ -73,11 +87,10 @@ body {
 /* Main Typography */
 .main-title {
     font-family: 'Playfair Display', serif;
-    font-size: clamp(3rem, 7vw, 4.5rem);
+    font-size: clamp(2.5rem, 7vw, 4.5rem);
     font-weight: 400;
     line-height: 1.15;
     margin-bottom: 1.5rem;
-    /* Strong text shadow ensures readability even with a brighter background */
     text-shadow: 0 4px 15px rgba(0, 0, 0, 0.9);
 }
 
