@@ -4,7 +4,34 @@
     padding: 0;
     box-sizing: border-box;
 }
+/* Keep content readable on large screens and avoid edge overflow */
+.wrapper, .container {
+  width: 100%;
+  max-width: 1200px; /* change to suit your design */
+  margin: 0 auto;
+  padding: 0 20px;
+}
 
+/* Prevent horizontal scroll from images/iframes */
+img, picture, video, iframe {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* If you have rows/columns, make them wrap */
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px; /* optional spacing */
+}
+.col {
+  flex: 1 1 300px; /* min column width 300px; shrinks/grows */
+  min-width: 0; /* allows flex children to shrink correctly */
+}
+
+/* Optional: hide accidental small horizontal overflow while debugging */
+html, body { overflow-x: hidden; } /* temporary; avoid if it hides needed content */
 body {
     background-color: #0a0a0a; 
     color: #ffffff;
