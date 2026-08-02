@@ -104,16 +104,18 @@ body {
 
 /* Paragraph Wrapper & Text */
 .description-wrapper {
-    max-width: 480px;
+    max-width: 550px; /* Slightly wider to accommodate the larger script text */
     margin: 0 auto 2.5rem auto;
 }
 
 .hero-description {
-    font-size: 1rem;
-    line-height: 1.7; /* Airy, elegant spacing */
-    color: #f8f8f8;
-    font-weight: 300;
-    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.9);
+    font-family: 'Caveat', cursive; /* The Artisanal Brush look */
+    font-size: clamp(1.8rem, 4vw, 2.2rem); /* Larger size for readability */
+    line-height: 1.3; 
+    color: #fdf0d5; /* Pale cream/gold to match the screenshot */
+    font-weight: 500;
+    letter-spacing: 1px;
+    text-shadow: 0 3px 12px rgba(0, 0, 0, 0.95); /* Strong shadow for contrast */
 }
 
 /* Call to Action Button */
