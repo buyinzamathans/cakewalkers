@@ -43,14 +43,17 @@ body {
 /* Hero Section Container */
 .hero-section {
     position: relative;
-    height: 100vh;
-    min-height: 850px;
+    min-height: 100vh; /* FIX: was "height: 100vh" + a separate "min-height: 850px",
+                           which capped the box and clipped content off the top when
+                           the content was taller than the viewport. min-height lets
+                           the section grow to fit its content instead of cutting it. */
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
-    padding: 2rem 20px;
+    padding: 6rem 20px; /* FIX: more top/bottom breathing room so content isn't
+                            crammed right against the viewport edges */
     
     /* Darkened overlay to let text pop, matching original image */
     background-image: 
@@ -60,23 +63,6 @@ body {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-}
-/* Tighten spacing between elements slightly to prevent vertical overflow */
-.brand-icon {
-    width: 40px;
-    height: 40px;
-    margin-bottom: 1rem;
-}
-
-/* Hero Content Wrapper */
-.hero-content {
-    position: relative;
-    z-index: 2;
-    max-width: 800px;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
 }
 
 /* Brand Icon */
@@ -90,6 +76,17 @@ body {
     width: 100%;
     height: 100%;
     display: block;
+}
+
+/* Hero Content Wrapper */
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 800px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 /* Location Tag with Lines */
@@ -271,5 +268,16 @@ body {
         width: 100%;
         max-width: 320px;
         padding: 16px 20px;
+    }
+}
+
+/* Tighten hero on shorter/laptop-height screens so it still feels
+   like a "one screen" hero without the title/text getting clipped */
+@media (max-width: 1100px) and (min-height: 700px) {
+    .main-title {
+        font-size: clamp(2.5rem, 6vw, 4rem);
+    }
+    .description-script {
+        font-size: clamp(2rem, 4vw, 2.8rem);
     }
 }
