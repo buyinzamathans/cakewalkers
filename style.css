@@ -1,3 +1,157 @@
+/* ========== Base & Hero Styles (merged) ========== */
+
+/* CSS variables */
+:root{
+  --bg: #ffffff;
+  --text: #111111;
+  --muted: #666666;
+  --gold-accent: #dbaf54;
+  --bg-dark: #0a0a0a;
+}
+
+/* Base reset / typography */
+*{box-sizing:border-box}
+html,body{
+  height:100%;
+  margin:0;
+  background:var(--bg);
+  color:var(--text);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  font-family: 'Montserrat', 'Helvetica Neue', Arial, sans-serif;
+}
+
+/* Fallback for headings that should use Playfair/serif */
+h1,h2,h3{
+  font-family: 'Playfair Display', serif;
+  margin:0;
+}
+
+/* HERO SECTION */
+.hero-section{
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:6vh 6vw;
+  position:relative;
+  overflow:hidden;
+  background:var(--bg);
+}
+
+/* center content column and limit width */
+.hero-content{
+  width:100%;
+  max-width:900px;
+  margin:0 auto;
+  position:relative;
+  z-index:2;
+}
+
+/* brand icon (top) */
+.brand-icon{
+  display:block;
+  width:140px;
+  height:140px;
+  margin:0 auto 30px auto;
+}
+.brand-icon svg{
+  width:100%;
+  height:100%;
+  display:block;
+}
+
+/* location tag */
+.location-wrapper{
+  margin-bottom:18px;
+  text-align:left;
+}
+.location-tag{
+  display:inline-block;
+  font-family: 'Montserrat', sans-serif;
+  font-weight:600;
+  letter-spacing:2px;
+  color:var(--muted);
+  font-size:0.9rem;
+}
+
+/* main title */
+.main-title{
+  font-size: clamp(2.2rem, 7vw, 4rem);
+  line-height:1.02;
+  font-weight:700;
+  color:var(--text);
+  margin:18px 0 26px 0;
+  text-align:left;
+  letter-spacing: -1px;
+}
+.main-title .highlight{
+  color:var(--text);
+  font-family: 'Playfair Display', serif;
+  font-weight:800;
+}
+
+/* heart/divider graphic */
+.heart-divider{
+  display:block;
+  width:150px;
+  margin:40px 0;
+}
+.heart-divider svg{width:100%;height:auto;display:block}
+
+/* description text */
+.description-wrapper{
+  margin-top:20px;
+}
+.description-main{
+  font-size:1.05rem;
+  color:var(--muted);
+  line-height:1.5;
+  margin:0 0 8px 0;
+}
+.description-script{
+  font-family:'Caveat', cursive;
+  margin-top:8px;
+  color:var(--muted);
+  font-size:1.1rem;
+}
+
+/* primary WhatsApp button used in hero */
+.whatsapp-btn{
+  display:inline-flex;
+  align-items:center;
+  gap:12px;
+  margin-top:22px;
+  text-decoration:none;
+  background:var(--gold-accent);
+  color:#111;
+  padding:12px 20px;
+  border-radius:40px;
+  font-weight:700;
+  font-family:'Montserrat',sans-serif;
+  box-shadow:0 6px 18px rgba(0,0,0,0.12);
+}
+.whatsapp-btn .wa-icon{width:18px;height:18px;display:inline-block;}
+
+/* footer link */
+.footer-link-wrapper{
+  margin-top:28px;
+}
+.view-collection{
+  text-decoration:none;
+  color:var(--text);
+  font-weight:700;
+  letter-spacing:0.08em;
+}
+
+/* Responsive tweaks */
+@media (max-width:800px){
+  .brand-icon{width:110px;height:110px;margin-bottom:18px;}
+  .main-title{font-size:clamp(1.6rem,9vw,2.8rem);} 
+  .hero-section{padding:6vh 5vw;}
+}
+
+
 /* =========================================
    COLLECTIONS PAGE STYLES - SWIPEABLE CARDS
    ========================================= */
