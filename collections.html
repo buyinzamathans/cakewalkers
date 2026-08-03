@@ -4,12 +4,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Cake Walkers | Collections</title>
-    
-    <!-- Google Fonts: Pulled heavier weights for that bold, rich, 'fat' typography -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Montserrat:wght@400;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600;1,700&display=swap" rel="stylesheet">
-    
     <link rel="stylesheet" href="style.css">
 </head>
 <body class="collections-body">
@@ -22,17 +19,14 @@
         <header class="collections-header">
             <div class="brand-icon logo-icon">
                 <svg viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <!-- Rolling Pin -->
                     <path d="M25 75 L75 25" stroke="#dbaf54" stroke-width="4" stroke-linecap="round"/>
                     <path d="M30 70 L70 30" stroke="#dbaf54" stroke-width="8" stroke-linecap="round"/>
-                    <!-- Whisk -->
                     <path d="M25 25 L50 50" stroke="#dbaf54" stroke-width="4" stroke-linecap="round"/>
                     <ellipse cx="65" cy="65" rx="15" ry="8" transform="rotate(-45 65 65)" stroke="#dbaf54" stroke-width="2"/>
                     <ellipse cx="65" cy="65" rx="15" ry="4" transform="rotate(-45 65 65)" stroke="#dbaf54" stroke-width="2"/>
                     <path d="M50 50 L75 75" stroke="#dbaf54" stroke-width="4" stroke-linecap="round"/>
                 </svg>
             </div>
-            
             <div class="location-tag">
                 <span>—</span> KAMPALA &bull; UGANDA <span>—</span>
             </div>
@@ -41,7 +35,6 @@
         <!-- Title Section -->
         <section class="collections-intro">
             <h1>OUR CURATED COLLECTIONS</h1>
-            
             <div class="divider-heart">
                 <span class="line"></span>
                 <span class="heart">
@@ -51,69 +44,119 @@
                 </span>
                 <span class="line"></span>
             </div>
-            
             <p>Explore our full range of bespoke creations,<br>tailored for you.</p>
         </section>
 
-        <!-- Grid Section -->
+        <!-- Grid Section with Swipeable Cards -->
         <main class="collections-grid">
-            <!-- Card 1 -->
+            
+            <!-- Card 1: Wedding Cakes -->
             <div class="collection-card">
-                <div class="card-img" style="background-image: url('images/wedding-cake.jpg');"></div>
+                <div class="card-carousel">
+                    <!-- ADD MULTIPLE IMAGES HERE FOR THE SLIDESHOW -->
+                    <img src="images/wedding-cake-1.jpg" alt="Wedding Cake 1" class="carousel-img">
+                    <img src="images/wedding-cake-2.jpg" alt="Wedding Cake 2" class="carousel-img">
+                    <img src="images/wedding-cake-3.jpg" alt="Wedding Cake 3" class="carousel-img">
+                </div>
+                <div class="card-overlay"></div>
                 <div class="card-content">
+                    <div class="swipe-indicator"><span>&larr;</span> SWIPE <span>&rarr;</span></div>
                     <h2>WEDDING<br>CAKES</h2>
                     <p>Timeless elegance for<br><em>your forever.</em></p>
-                    <a href="#" class="view-link">VIEW COLLECTION &gt;</a>
+                    <a href="https://wa.me/256777690441?text=Hi!%20I'm%20interested%20in%20ordering%20a%20Wedding%20Cake." class="card-wa-btn" target="_blank">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+                        ORDER DESIGN
+                    </a>
                 </div>
             </div>
 
-            <!-- Card 2 -->
+            <!-- Card 2: Birthday Dreams -->
             <div class="collection-card">
-                <div class="card-img" style="background-image: url('images/birthday-cake.jpg');"></div>
+                <div class="card-carousel">
+                    <img src="images/birthday-cake-1.jpg" alt="Birthday Cake 1" class="carousel-img">
+                    <img src="images/birthday-cake-2.jpg" alt="Birthday Cake 2" class="carousel-img">
+                </div>
+                <div class="card-overlay"></div>
                 <div class="card-content">
+                    <div class="swipe-indicator"><span>&larr;</span> SWIPE <span>&rarr;</span></div>
                     <h2>BIRTHDAY<br>DREAMS</h2>
                     <p>Making every birthday<br><em>pure magic.</em></p>
-                    <a href="#" class="view-link">VIEW COLLECTION &gt;</a>
+                    <a href="https://wa.me/256777690441?text=Hi!%20I'm%20interested%20in%20ordering%20a%20Birthday%20Cake." class="card-wa-btn" target="_blank">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+                        ORDER DESIGN
+                    </a>
                 </div>
             </div>
 
-            <!-- Card 3 -->
+            <!-- Card 3: Custom Creations -->
             <div class="collection-card">
-                <div class="card-img" style="background-image: url('images/custom-creation.jpg');"></div>
+                <div class="card-carousel">
+                    <img src="images/custom-creation-1.jpg" alt="Custom Creation 1" class="carousel-img">
+                    <img src="images/custom-creation-2.jpg" alt="Custom Creation 2" class="carousel-img">
+                </div>
+                <div class="card-overlay"></div>
                 <div class="card-content">
+                    <div class="swipe-indicator"><span>&larr;</span> SWIPE <span>&rarr;</span></div>
                     <h2>CUSTOM<br>CREATIONS</h2>
                     <p>Your vision,<br><em>sculpted with care.</em></p>
-                    <a href="#" class="view-link">VIEW COLLECTION &gt;</a>
+                    <a href="https://wa.me/256777690441?text=Hi!%20I%20have%20an%20idea%20for%20a%20Custom%20Cake!" class="card-wa-btn" target="_blank">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+                        ORDER DESIGN
+                    </a>
                 </div>
             </div>
 
-            <!-- Card 4 -->
+            <!-- Card 4: Celebration Cakes -->
             <div class="collection-card">
-                <div class="card-img" style="background-image: url('images/celebration-cake.jpg');"></div>
+                <div class="card-carousel">
+                    <img src="images/celebration-cake-1.jpg" alt="Celebration 1" class="carousel-img">
+                    <img src="images/celebration-cake-2.jpg" alt="Celebration 2" class="carousel-img">
+                </div>
+                <div class="card-overlay"></div>
                 <div class="card-content">
+                    <div class="swipe-indicator"><span>&larr;</span> SWIPE <span>&rarr;</span></div>
                     <h2>CELEBRATION<br>CAKES</h2>
                     <p>From milestones to<br><em>unforgettable joys.</em></p>
-                    <a href="#" class="view-link">VIEW COLLECTION &gt;</a>
+                    <a href="https://wa.me/256777690441?text=Hi!%20I'm%20looking%20for%20a%20Celebration%20Cake." class="card-wa-btn" target="_blank">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+                        ORDER DESIGN
+                    </a>
                 </div>
             </div>
 
-            <!-- Card 5 -->
+            <!-- Card 5: Kampala Exclusives -->
             <div class="collection-card">
-                <div class="card-img" style="background-image: url('images/kampala-exclusives.jpg');"></div>
+                <div class="card-carousel">
+                    <img src="images/kampala-exclusives-1.jpg" alt="Exclusives 1" class="carousel-img">
+                    <img src="images/kampala-exclusives-2.jpg" alt="Exclusives 2" class="carousel-img">
+                </div>
+                <div class="card-overlay"></div>
                 <div class="card-content">
+                    <div class="swipe-indicator"><span>&larr;</span> SWIPE <span>&rarr;</span></div>
                     <h2>KAMPALA<br>EXCLUSIVES</h2>
                     <p>Savoring local<br><em>treasures.</em></p>
-                    <a href="#" class="view-link">VIEW COLLECTION &gt;</a>
+                    <a href="https://wa.me/256777690441?text=Hi!%20I'm%20interested%20in%20the%20Kampala%20Exclusives." class="card-wa-btn" target="_blank">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+                        ORDER DESIGN
+                    </a>
                 </div>
             </div>
 
-            <!-- Card 6 -->
+            <!-- Card 6: Dessert Bars -->
             <div class="collection-card">
-                <div class="card-img" style="background-image: url('images/dessert-bars.jpg');"></div>
+                <div class="card-carousel">
+                    <img src="images/dessert-bars-1.jpg" alt="Dessert Bars 1" class="carousel-img">
+                    <img src="images/dessert-bars-2.jpg" alt="Dessert Bars 2" class="carousel-img">
+                </div>
+                <div class="card-overlay"></div>
                 <div class="card-content">
+                    <div class="swipe-indicator"><span>&larr;</span> SWIPE <span>&rarr;</span></div>
                     <h2>DESSERT BARS</h2>
                     <p>Curated spreads,<br><em>finished by hand.</em></p>
-                    <a href="#" class="view-link">VIEW COLLECTION &gt;</a>
+                    <a href="https://wa.me/256777690441?text=Hi!%20I%20want%20to%20order%20a%20Dessert%20Bar%20setup." class="card-wa-btn" target="_blank">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path></svg>
+                        ORDER DESIGN
+                    </a>
                 </div>
             </div>
         </main>
@@ -124,11 +167,10 @@
                 <svg class="wa-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
                     <path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5z"></path>
                 </svg>
-                ORDER ON WHATSAPP
+                TALK TO US ON WHATSAPP
             </a>
             <a href="index.html" class="back-link">&lt; BACK TO HOME</a>
         </footer>
     </div>
-
 </body>
 </html>
