@@ -279,7 +279,7 @@ body {
     height: 60vh; 
     background: linear-gradient(to bottom, rgba(10, 10, 10, 0.1) 0%, rgba(10, 10, 10, 1) 100%), 
                 url('top-image.jpg') center/cover no-repeat; /* <-- Insert your image path here */
-    z-index: -1; 
+    z-index: 0; /* changed from -1 so the background isn't pushed behind the body background */
 }
 
 .collections-wrapper {
@@ -289,6 +289,8 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+    position: relative; /* ensure wrapper forms its own stacking context */
+    z-index: 1; /* sit above .top-fade-bg so content is visible */
 }
 
 /* Header & Icon */
