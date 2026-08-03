@@ -1,383 +1,119 @@
-/* Reset and Base Styles */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-/* Keep content readable on large screens and avoid edge overflow */
-.wrapper, .container {
-  width: 100%;
-  max-width: 1200px; /* change to suit your design */
-  margin: 0 auto;
-  padding: 0 20px;
-}
-
-/* Prevent horizontal scroll from images/iframes */
-img, picture, video, iframe {
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
-
-/* If you have rows/columns, make them wrap */
-.row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 16px; /* optional spacing */
-}
-.col {
-  flex: 1 1 300px; /* min column width 300px; shrinks/grows */
-  min-width: 0; /* allows flex children to shrink correctly */
-}
-
-/* Optional: hide accidental small horizontal overflow while debugging */
-html, body { overflow-x: hidden; } /* temporary; avoid if it hides needed content */
-body {
-    background-color: #0a0a0a; 
-    color: #ffffff;
-    font-family: 'Montserrat', sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-}
-
-/* Hero Section Container */
-.hero-section {
-    position: relative;
-    min-height: 100vh; /* FIX: was "height: 100vh" + a separate "min-height: 850px",
-                           which capped the box and clipped content off the top when
-                           the content was taller than the viewport. min-height lets
-                           the section grow to fit its content instead of cutting it. */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 6rem 20px; /* FIX: more top/bottom breathing room so content isn't
-                            crammed right against the viewport edges */
-    
-    /* Darkened overlay to let text pop, matching original image */
-    background-image: 
-        linear-gradient(to bottom, rgba(15, 10, 5, 0.6) 0%, rgba(10, 8, 5, 0.85) 100%),
-        url('laptop-bg.png'); /* Replace with your actual background */
-    
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-
-/* Brand Icon */
-.brand-icon {
-    width: 50px;
-    height: 50px;
-    margin-bottom: 1.5rem;
-}
-
-.brand-icon svg {
-    width: 100%;
-    height: 100%;
-    display: block;
-}
-
-/* Hero Content Wrapper */
-.hero-content {
-    position: relative;
-    z-index: 2;
-    max-width: 800px;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-/* Location Tag with Lines */
-.location-wrapper {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    max-width: 300px;
-    margin-bottom: 2rem;
-}
-
-.location-wrapper::before,
-.location-wrapper::after {
-    content: '';
-    flex: 1;
-    height: 1px;
-    background-color: #635032; /* Dim gold for lines */
-}
-
-.location-tag {
-    font-size: 0.75rem;
-    letter-spacing: 0.3em; 
-    color: #dbaf54;
-    text-transform: uppercase;
-    font-weight: 500;
-    padding: 0 15px;
-}
-
-/* Main Typography */
-.main-title {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(3rem, 9vw, 5.5rem);
-    font-weight: 500;
-    line-height: 1.1; 
-    margin-bottom: 1.5rem;
-}
-
-.main-title .highlight {
-    font-style: italic;
-    color: #dbaf54;
-    font-weight: 600;
-}
-
-/* Heart Divider */
-.heart-divider {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    max-width: 250px;
-    margin: 1rem 0 2rem 0;
-}
-
-.heart-divider::before,
-.heart-divider::after {
-    content: '';
-    flex: 1;
-    height: 1px;
-    background-color: #dbaf54;
-}
-
-.heart-divider svg {
-    width: 14px;
-    height: 14px;
-    margin: 0 15px;
-}
-
-/* Paragraph Wrapper & Text */
-.description-wrapper {
-    max-width: 600px; 
-    margin: 0 auto 3rem auto;
-}
-
-.description-main {
-    font-family: 'Montserrat', sans-serif;
-    font-size: clamp(1.1rem, 3vw, 1.4rem);
-    font-weight: 400;
-    line-height: 1.6;
-    color: #ffffff;
-    margin-bottom: 1.5rem;
-    letter-spacing: 0.05em;
-}
-
-.description-main .highlight-text {
-    font-family: 'Playfair Display', serif;
-    font-style: italic;
-    color: #dbaf54;
-    font-size: 1.15em; /* Slightly larger to match proportional size */
-}
-
-.description-script {
-    font-family: 'Caveat', cursive;
-    font-size: clamp(2.5rem, 5vw, 3.5rem); 
-    line-height: 1; 
-    color: #ffffff; 
-    font-weight: 500;
-}
-
-/* Call to Action Button */
-.whatsapp-btn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #dbaf54; /* Solid gold */
-    color: #000000;
-    text-decoration: none;
-    padding: 16px 36px;
-    border-radius: 50px;
-    font-size: 0.9rem;
-    font-weight: 700;
-    letter-spacing: 0.15em; 
-    margin-bottom: 4rem;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-.whatsapp-btn:hover {
-    background-color: #c99c43;
-    transform: translateY(-2px);
-}
-
-.wa-icon {
-    width: 20px;
-    height: 20px;
-    margin-right: 12px;
-}
-
-/* Bottom Scroll Text with Lines */
-.footer-link-wrapper {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    max-width: 400px;
-}
-
-.footer-link-wrapper::before,
-.footer-link-wrapper::after {
-    content: '';
-    flex: 1;
-    height: 1px;
-    background-color: rgba(255, 255, 255, 0.2);
-}
-
-.view-collection {
-    display: inline-flex;
-    align-items: center;
-    color: #ffffff;
-    text-decoration: none;
-    font-size: 0.75rem;
-    letter-spacing: 0.3em;
-    text-transform: uppercase;
-    font-weight: 400;
-    padding: 0 20px;
-    transition: color 0.3s ease;
-}
-
-.view-collection .arrow {
-    color: #dbaf54;
-    margin-left: 10px;
-    font-weight: 700;
-    font-size: 0.9rem;
-}
-
-.view-collection:hover {
-    color: #dbaf54;
-}
-
-/* Media Query for Mobile Devices */
-@media (max-width: 768px) {
-    .hero-section {
-        padding: 2rem 15px;
-        background-image: 
-            linear-gradient(to bottom, rgba(15, 10, 5, 0.6) 0%, rgba(10, 8, 5, 0.85) 100%),
-            url('mobile-bg.png'); /* Replace with your actual mobile background */
-    }
-    
-    .whatsapp-btn {
-        width: 100%;
-        max-width: 320px;
-        padding: 16px 20px;
-    }
-}
-
-/* Tighten hero on shorter/laptop-height screens so it still feels
-   like a "one screen" hero without the title/text getting clipped */
-@media (max-width: 1100px) and (min-height: 700px) {
-    .main-title {
-        font-size: clamp(2.5rem, 6vw, 4rem);
-    }
-    .description-script {
-        font-size: clamp(2rem, 4vw, 2.8rem);
-    }
-}
 /* =========================================
-   COLLECTIONS PAGE STYLES
+   COLLECTIONS PAGE STYLES (ENHANCED)
    ========================================= */
 
 :root {
-    --gold-accent: #cda85c;
-    --gold-hover: #b5924b;
-    --text-light: #fdfdfd;
-    --bg-dark: #111111;
-    --card-bg: linear-gradient(180deg, rgba(20,20,20,0) 0%, rgba(15,15,15,0.9) 60%, rgba(10,10,10,1) 100%);
+    --gold-accent: #dbaf54;
+    --gold-hover: #c99c43;
+    --text-light: #ffffff;
+    --bg-dark: #0a0a0a;
+    --card-bg: linear-gradient(180deg, rgba(10,10,10,0) 0%, rgba(10,10,10,0.85) 50%, rgba(10,10,10,1) 100%);
 }
 
 .collections-body {
     margin: 0;
     padding: 0;
-    /* Replace this URL with your moody bakery background image */
-    background: linear-gradient(rgba(10, 8, 5, 0.85), rgba(10, 8, 5, 0.85)), url('path/to/bakery-bg.jpg') center/cover no-repeat;
-    background-attachment: fixed;
+    background-color: var(--bg-dark); 
     color: var(--text-light);
     font-family: 'Montserrat', sans-serif;
+    position: relative; 
+    min-height: 100vh;
+}
+
+/* The fading top background image */
+.top-fade-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60vh; /* Adjust height based on how far down you want the fade */
+    background: linear-gradient(to bottom, rgba(10, 10, 10, 0.1) 0%, rgba(10, 10, 10, 1) 100%), 
+                url('images/your-top-image.jpg') center/cover no-repeat; /* <-- Insert your image path here */
+    z-index: -1; 
 }
 
 .collections-wrapper {
-    max-width: 800px; /* Keeps it contained on desktop, perfectly sized for mobile/tablets */
+    max-width: 900px; /* Slightly wider for a more premium grid spacing */
     margin: 0 auto;
-    padding: 40px 20px;
+    padding: 60px 20px 80px;
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-/* Header */
+/* Header & Icon */
 .collections-header {
     text-align: center;
-    margin-bottom: 30px;
+    margin-bottom: 40px;
 }
 
-.logo-icon {
-    color: var(--gold-accent);
-    font-size: 32px;
-    margin-bottom: 10px;
+.collections-header .logo-icon {
+    width: 70px;
+    height: 70px;
+    margin: 0 auto 15px auto;
 }
 
-.location-tag {
-    font-size: 11px;
-    letter-spacing: 3px;
+.collections-header .logo-icon svg {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.collections-header .location-tag {
+    font-size: 0.8rem;
+    letter-spacing: 0.3em;
     color: var(--gold-accent);
     text-transform: uppercase;
+    font-weight: 600;
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 15px;
 }
 
-.location-tag span {
-    opacity: 0.5;
-}
-
-/* Intro Section */
+/* Intro Section - BIG, BOLD, BEAUTIFUL */
 .collections-intro {
     text-align: center;
-    margin-bottom: 40px;
+    margin-bottom: 50px;
+    width: 100%;
 }
 
 .collections-intro h1 {
     font-family: 'Cinzel', serif;
-    font-size: 32px;
-    font-weight: 400;
-    margin: 0 0 15px 0;
-    letter-spacing: 1px;
+    font-size: clamp(2.5rem, 6vw, 3.5rem); /* Responsive, large typography */
+    font-weight: 800; /* Extra bold */
+    margin: 0 0 20px 0;
+    letter-spacing: 2px;
+    line-height: 1.1;
+    text-shadow: 2px 2px 10px rgba(0,0,0,0.5); /* Subtle shadow for depth */
 }
 
 .divider-heart {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 15px;
-    margin-bottom: 15px;
+    gap: 20px;
+    margin-bottom: 25px;
 }
 
 .divider-heart .line {
     height: 1px;
-    width: 40px;
+    width: 60px;
     background-color: var(--gold-accent);
-    opacity: 0.5;
+    opacity: 0.6;
 }
 
-.divider-heart .heart {
-    color: var(--gold-accent);
-    font-size: 14px;
+.divider-heart .heart svg {
+    width: 16px;
+    height: 16px;
 }
 
 .collections-intro p {
     font-family: 'Playfair Display', serif;
-    font-size: 18px;
+    font-size: clamp(1.2rem, 3vw, 1.5rem); /* Thicker subtitle */
+    font-weight: 600;
     color: var(--gold-accent);
-    line-height: 1.4;
+    line-height: 1.5;
     margin: 0;
 }
 
@@ -385,22 +121,28 @@ body {
 .collections-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 15px;
+    gap: 25px; /* More breathing room */
     width: 100%;
-    margin-bottom: 50px;
+    margin-bottom: 60px;
 }
 
-/* Cards */
+/* Individual Collection Cards */
 .collection-card {
     position: relative;
-    border-radius: 8px;
+    border-radius: 12px; /* Smoother, more modern corners */
     overflow: hidden;
-    height: 320px;
+    height: 380px; /* Taller cards for better image display */
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
     text-align: center;
     background-color: var(--bg-dark);
+    box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    transition: transform 0.3s ease;
+}
+
+.collection-card:hover {
+    transform: translateY(-5px); /* Lift effect on hover */
 }
 
 .card-img {
@@ -412,13 +154,18 @@ body {
     background-position: center;
     background-size: cover;
     z-index: 1;
+    transition: transform 0.5s ease;
+}
+
+.collection-card:hover .card-img {
+    transform: scale(1.05); /* Slight image zoom on hover */
 }
 
 .card-content {
     position: relative;
     z-index: 2;
     background: var(--card-bg);
-    padding: 20px 10px;
+    padding: 30px 20px;
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -427,30 +174,32 @@ body {
 
 .card-content h2 {
     font-family: 'Cinzel', serif;
-    font-size: 18px;
-    font-weight: 400;
-    margin: 0 0 10px 0;
+    font-size: clamp(1.4rem, 4vw, 1.8rem);
+    font-weight: 700; /* Bolded card titles */
+    margin: 0 0 12px 0;
     line-height: 1.2;
-    letter-spacing: 0.5px;
+    letter-spacing: 1px;
 }
 
 .card-content p {
     font-family: 'Playfair Display', serif;
-    font-size: 14px;
-    margin: 0 0 15px 0;
-    color: #cccccc;
+    font-size: 1.1rem;
+    font-weight: 600; /* Thicker description text */
+    margin: 0 0 20px 0;
+    color: #e0e0e0;
 }
 
 .card-content p em {
     color: var(--gold-accent);
     font-style: italic;
+    font-weight: 700;
 }
 
 .view-link {
     font-family: 'Montserrat', sans-serif;
-    font-size: 10px;
-    font-weight: 600;
-    letter-spacing: 1.5px;
+    font-size: 0.8rem;
+    font-weight: 700; /* Bold link text */
+    letter-spacing: 2px;
     color: var(--text-light);
     text-decoration: none;
     text-transform: uppercase;
@@ -467,37 +216,45 @@ body {
     flex-direction: column;
     align-items: center;
     width: 100%;
-    gap: 25px;
+    gap: 30px;
 }
 
+/* WhatsApp Button matching your homepage styles but chunkier */
 .whatsapp-btn {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 10px;
     background-color: var(--gold-accent);
-    color: var(--bg-dark);
+    color: #000000;
     font-family: 'Montserrat', sans-serif;
-    font-size: 14px;
-    font-weight: 600;
-    letter-spacing: 1px;
+    font-size: 1rem;
+    font-weight: 800; /* Extra bold button text */
+    letter-spacing: 0.15em;
     text-decoration: none;
-    padding: 16px 32px;
+    padding: 18px 40px; /* Thicker padding */
     border-radius: 50px;
     width: 100%;
-    max-width: 300px;
-    transition: background-color 0.3s ease;
+    max-width: 350px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .whatsapp-btn:hover {
     background-color: var(--gold-hover);
+    transform: translateY(-2px);
+}
+
+.wa-icon {
+    width: 22px;
+    height: 22px;
+    margin-right: 12px;
 }
 
 .back-link {
     font-family: 'Montserrat', sans-serif;
-    font-size: 12px;
-    letter-spacing: 2px;
-    color: var(--text-light);
+    font-size: 0.8rem;
+    font-weight: 700; /* Bolder back link */
+    letter-spacing: 0.25em;
+    color: rgba(255, 255, 255, 0.6);
     text-decoration: none;
     text-transform: uppercase;
     transition: color 0.3s ease;
@@ -508,34 +265,13 @@ body {
 }
 
 /* Responsive adjustments */
-@media (max-width: 480px) {
+@media (max-width: 600px) {
     .collections-grid {
-        grid-template-columns: 1fr; /* Stacks to 1 column on very small screens if needed, but 2 looks best for this design */
+        grid-template-columns: 1fr; /* Stacks seamlessly on mobile */
+        gap: 20px;
+    }
+    
+    .collection-card {
+        height: 350px;
     }
 }
-/* Update your existing collections-body to a solid dark color */
-.collections-body {
-    margin: 0;
-    padding: 0;
-    background-color: #111111; /* Solid dark background */
-    color: var(--text-light);
-    font-family: 'Montserrat', sans-serif;
-    position: relative; /* Important for the fading image to sit properly */
-}
-
-/* Add this completely new code for the fading top image */
-.top-fade-bg {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 55vh; /* Controls how far down the image goes. 55vh is 55% of the screen height */
-    
-    /* The linear-gradient creates the fade. The first color is slightly transparent at the top, fading to solid #111111 at the bottom */
-    background: linear-gradient(to bottom, rgba(17, 17, 17, 0.2) 0%, rgba(17, 17, 17, 1) 100%), 
-                url('path/to/your/top-image.jpg') center/cover no-repeat;
-    
-    z-index: -1; /* Keeps the image behind your text and icons */
-}
-
-
