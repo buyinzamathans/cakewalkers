@@ -187,13 +187,14 @@ body {
     font-weight: 500;
 }
 
-/* Bottom Scroll Text with Lines */
+/* Bottom Scroll Text with Lines (ENHANCED & BOLDER) */
 .footer-link-wrapper {
     display: flex;
     align-items: center;
     justify-content: center;
     width: 100%;
-    max-width: 400px;
+    max-width: 550px; /* Increased to allow room for larger text */
+    margin-top: 1rem;
 }
 
 .footer-link-wrapper::before,
@@ -201,31 +202,32 @@ body {
     content: '';
     flex: 1;
     height: 1px;
-    background-color: rgba(255, 255, 255, 0.2);
+    background-color: rgba(219, 175, 84, 0.4); /* Subtle gold tint for better visibility */
 }
 
 .view-collection {
     display: inline-flex;
     align-items: center;
-    color: #ffffff;
+    color: #dbaf54; /* Bright gold font color to catch the eye */
     text-decoration: none;
-    font-size: 0.75rem;
-    letter-spacing: 0.3em;
+    font-size: clamp(0.95rem, 2.5vw, 1.1rem); /* Larger font size */
+    letter-spacing: 0.25em;
     text-transform: uppercase;
-    font-weight: 400;
+    font-weight: 700; /* Bold */
     padding: 0 20px;
-    transition: color 0.3s ease;
+    transition: all 0.3s ease;
 }
 
 .view-collection .arrow {
     color: #dbaf54;
-    margin-left: 10px;
-    font-weight: 700;
-    font-size: 0.9rem;
+    margin-left: 12px;
+    font-weight: 900;
+    font-size: 1.2rem; /* Larger arrow indicator */
 }
 
 .view-collection:hover {
-    color: #dbaf54;
+    color: #ffffff;
+    transform: scale(1.03); /* Subtle zoom effect on hover */
 }
 
 /* Media Query for Mobile Devices */
