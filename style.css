@@ -513,4 +513,29 @@ body {
         grid-template-columns: 1fr; /* Stacks to 1 column on very small screens if needed, but 2 looks best for this design */
     }
 }
+/* Update your existing collections-body to a solid dark color */
+.collections-body {
+    margin: 0;
+    padding: 0;
+    background-color: #111111; /* Solid dark background */
+    color: var(--text-light);
+    font-family: 'Montserrat', sans-serif;
+    position: relative; /* Important for the fading image to sit properly */
+}
+
+/* Add this completely new code for the fading top image */
+.top-fade-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 55vh; /* Controls how far down the image goes. 55vh is 55% of the screen height */
+    
+    /* The linear-gradient creates the fade. The first color is slightly transparent at the top, fading to solid #111111 at the bottom */
+    background: linear-gradient(to bottom, rgba(17, 17, 17, 0.2) 0%, rgba(17, 17, 17, 1) 100%), 
+                url('path/to/your/top-image.jpg') center/cover no-repeat;
+    
+    z-index: -1; /* Keeps the image behind your text and icons */
+}
+
 
