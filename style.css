@@ -1,481 +1,106 @@
 /* =========================================
-   HOMEPAGE STYLES
+   COLLECTIONS PAGE STYLES - SWIPEABLE CARDS
    ========================================= */
-
-/* Reset and Base Styles */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-/* Keep content readable on large screens and avoid edge overflow */
-.wrapper, .container {
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
-
-/* Prevent horizontal scroll from images/iframes */
-img, picture, video, iframe {
-  max-width: 100%;
-  height: auto;
-  display: block;
-}
-
-/* If you have rows/columns, make them wrap */
-.row {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 16px;
-}
-.col {
-  flex: 1 1 300px;
-  min-width: 0;
-}
-
-/* Optional: hide accidental small horizontal overflow while debugging */
-html, body { overflow-x: hidden; }
-body {
-    background-color: #0a0a0a; 
-    color: #ffffff;
-    font-family: 'Montserrat', sans-serif;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-}
-
-/* Hero Section Container */
-.hero-section {
-    position: relative;
-    min-height: 100vh; 
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 4rem 20px 3rem 20px; 
-    
-    /* Darkened overlay to let text pop, matching original image */
-    background-image: 
-        linear-gradient(to bottom, rgba(15, 10, 5, 0.6) 0%, rgba(10, 8, 5, 0.85) 100%),
-        url('laptop-bg.png'); /* Replace with your actual background */
-    
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-
-/* Brand Icon */
-.brand-icon {
-    width: 50px;
-    height: 50px;
-    margin-bottom: 1.5rem;
-}
-
-.brand-icon svg {
-    width: 100%;
-    height: 100%;
-    display: block;
-}
-
-/* Hero Content Wrapper */
-.hero-content {
-    position: relative;
-    z-index: 2;
-    max-width: 800px;
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-
-/* Location Tag with Lines */
-.location-wrapper {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    max-width: 300px;
-    margin-bottom: 2rem;
-}
-
-.location-wrapper::before,
-.location-wrapper::after {
-    content: '';
-    flex: 1;
-    height: 1px;
-    background-color: #635032;
-}
-
-.location-tag {
-    font-size: 0.75rem;
-    letter-spacing: 0.3em; 
-    color: #dbaf54;
-    text-transform: uppercase;
-    font-weight: 500;
-    padding: 0 15px;
-}
-
-/* Main Typography */
-.main-title {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(3rem, 9vw, 5.5rem);
-    font-weight: 500;
-    line-height: 1.1; 
-    margin-bottom: 1.5rem;
-}
-
-.main-title .highlight {
-    font-style: italic;
-    color: #dbaf54;
-    font-weight: 600;
-}
-
-/* Heart Divider */
-.heart-divider {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    max-width: 250px;
-    margin: 1rem 0 2rem 0;
-}
-
-.heart-divider::before,
-.heart-divider::after {
-    content: '';
-    flex: 1;
-    height: 1px;
-    background-color: #dbaf54;
-}
-
-.heart-divider svg {
-    width: 14px;
-    height: 14px;
-    margin: 0 15px;
-}
-
-/* Paragraph Wrapper & Text */
-.description-wrapper {
-    max-width: 600px; 
-    margin: 0 auto 2.5rem auto;
-}
-
-.description-main {
-    font-family: 'Montserrat', sans-serif;
-    font-size: clamp(1.1rem, 3vw, 1.4rem);
-    font-weight: 400;
-    line-height: 1.6;
-    color: #ffffff;
-    margin-bottom: 1.5rem;
-    letter-spacing: 0.05em;
-}
-
-.description-main .highlight-text {
-    font-family: 'Playfair Display', serif;
-    font-style: italic;
-    color: #dbaf54;
-    font-size: 1.15em;
-}
-
-.description-script {
-    font-family: 'Caveat', cursive;
-    font-size: clamp(2.5rem, 5vw, 3.5rem); 
-    line-height: 1; 
-    color: #ffffff; 
-    font-weight: 500;
-}
-
-/* WhatsApp Button matching your design */
-.whatsapp-btn {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: #dbaf54;
-    color: #000000;
-    text-decoration: none;
-    font-family: 'Montserrat', sans-serif;
-    padding: 16px 36px;
-    border-radius: 50px;
-    font-size: 0.9rem;
-    font-weight: 700;
-    letter-spacing: 0.15em; 
-    margin-bottom: 2rem; /* Reduced to pull "View Collection" closer */
-    transition: background-color 0.3s ease, transform 0.2s ease;
-}
-
-.whatsapp-btn:hover {
-    background-color: #c99c43;
-    transform: translateY(-2px);
-}
-
-.wa-icon {
-    width: 20px;
-    height: 20px;
-    margin-right: 12px;
-}
-
-/* Bottom Scroll Text with Lines (REFINED & ARTISTIC) */
-.footer-link-wrapper {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    max-width: 360px; /* Kept compact to frame the link nicely */
-    margin-top: 0.5rem; /* Pulled closer to WhatsApp button */
-}
-
-.footer-link-wrapper::before,
-.footer-link-wrapper::after {
-    content: '';
-    flex: 1;
-    height: 1px;
-    background-color: rgba(219, 175, 84, 0.35); /* Subtle luxury gold stroke */
-}
-
-.view-collection {
-    display: inline-flex;
-    align-items: center;
-    color: #dbaf54; /* Gold accent color for elegance */
-    text-decoration: none;
-    font-size: 0.82rem; /* Balanced size */
-    letter-spacing: 0.3em; /* Elegant spacing */
-    text-transform: uppercase;
-    font-weight: 600; /* Medium-bold weight */
-    padding: 6px 18px;
-    transition: all 0.3s cubic-bezier(0.25, 1, 0.5, 1);
-}
-
-.view-collection .arrow {
-    color: #dbaf54;
-    margin-left: 8px;
-    font-weight: 700;
-    font-size: 0.95rem;
-    transition: transform 0.3s ease;
-}
-
-.view-collection:hover {
-    color: #ffffff;
-    opacity: 0.95;
-}
-
-.view-collection:hover .arrow {
-    transform: translateX(4px); /* Moves arrow slightly right on hover */
-    color: #ffffff;
-}
-
-/* Media Query for Mobile Devices */
-@media (max-width: 768px) {
-    .hero-section {
-        padding: 3rem 15px 2rem 15px;
-        background-image: 
-            linear-gradient(to bottom, rgba(15, 10, 5, 0.6) 0%, rgba(10, 8, 5, 0.85) 100%),
-            url('mobile-bg.png'); /* Replace with your actual mobile background */
-    }
-
-    .footer-link-wrapper {
-        max-width: 310px;
-    }
-
-    .view-collection {
-        font-size: 0.78rem;
-        letter-spacing: 0.25em;
-        padding: 4px 12px;
-    }
-}
-
-/* Tighten hero on shorter/laptop-height screens */
-@media (max-width: 1100px) and (min-height: 700px) {
-    .main-title {
-        font-size: clamp(2.5rem, 6vw, 4rem);
-    }
-    .description-script {
-        font-size: clamp(2rem, 4vw, 2.8rem);
-    }
-}
-
-/* =========================================
-   COLLECTIONS PAGE STYLES (ENHANCED)
-   ========================================= */
-
-:root {
-    --gold-accent: #dbaf54;
-    --gold-hover: #c99c43;
-    --text-light: #ffffff;
-    --bg-dark: #0a0a0a;
-    --card-bg: linear-gradient(180deg, rgba(10,10,10,0) 0%, rgba(10,10,10,0.85) 50%, rgba(10,10,10,1) 100%);
-}
-
-.collections-body {
-    margin: 0;
-    padding: 0;
-    background-color: var(--bg-dark); 
-    color: var(--text-light);
-    font-family: 'Montserrat', sans-serif;
-    position: relative; 
-    min-height: 100vh;
-}
-
-/* The fading top background image */
-.top-fade-bg {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 60vh; 
-    background: linear-gradient(to bottom, rgba(10, 10, 10, 0.1) 0%, rgba(10, 10, 10, 1) 100%), 
-                url('top-image.jpg') center/cover no-repeat;
-    z-index: 0;
-}
-
-.collections-wrapper {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 60px 20px 80px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: relative; 
-    z-index: 1; 
-}
-
-/* Header & Icon */
-.collections-header {
-    text-align: center;
-    margin-bottom: 40px;
-}
-
-.collections-header .logo-icon {
-    width: 70px;
-    height: 70px;
-    margin: 0 auto 15px auto;
-}
-
-.collections-header .logo-icon svg {
-    width: 100%;
-    height: 100%;
-    display: block;
-}
-
-.collections-header .location-tag {
-    font-size: 0.8rem;
-    letter-spacing: 0.3em;
-    color: var(--gold-accent);
-    text-transform: uppercase;
-    font-weight: 600;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 15px;
-}
-
-/* Intro Section */
-.collections-intro {
-    text-align: center;
-    margin-bottom: 50px;
-    width: 100%;
-}
-
-.collections-intro h1 {
-    font-family: 'Cinzel', serif;
-    font-size: clamp(2.5rem, 6vw, 3.5rem); 
-    font-weight: 800; 
-    margin: 0 0 20px 0;
-    letter-spacing: 2px;
-    line-height: 1.1;
-    text-shadow: 2px 2px 10px rgba(0,0,0,0.5); 
-}
-
-/* Collections specific heart divider width */
-.collections-intro .divider-heart {
-    width: auto;
-    max-width: none;
-    gap: 20px;
-}
-
-.collections-intro .divider-heart .line {
-    height: 1px;
-    width: 60px;
-    background-color: var(--gold-accent);
-    opacity: 0.6;
-}
-
-.collections-intro .divider-heart .heart svg {
-    width: 16px;
-    height: 16px;
-    margin: 0;
-}
-
-.collections-intro p {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(1.2rem, 3vw, 1.5rem); 
-    font-weight: 600;
-    color: var(--gold-accent);
-    line-height: 1.5;
-    margin: 0;
-}
 
 /* Grid Layout */
 .collections-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 25px; 
+    gap: 30px; 
     width: 100%;
     margin-bottom: 60px;
 }
 
-/* Individual Collection Cards */
+/* Individual Collection Cards Container */
 .collection-card {
     position: relative;
     border-radius: 12px; 
     overflow: hidden;
-    height: 380px; 
+    height: 420px; /* Made slightly taller to fit the new button */
     display: flex;
     flex-direction: column;
     justify-content: flex-end;
     text-align: center;
     background-color: var(--bg-dark);
     box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-    transition: transform 0.3s ease;
+    /* Removed the hover scale effect here so the swiping feels stable */
 }
 
-.collection-card:hover {
-    transform: translateY(-5px); 
-}
-
-.card-img {
+/* The Horizontal Scroll Track (The Magic) */
+.card-carousel {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background-position: center;
-    background-size: cover;
+    display: flex;
+    overflow-x: auto; /* Allows swiping */
+    scroll-snap-type: x mandatory; /* Snaps the images neatly */
+    scrollbar-width: none; /* Hides scrollbar in Firefox */
+    -ms-overflow-style: none; /* Hides scrollbar in IE/Edge */
     z-index: 1;
-    transition: transform 0.5s ease;
 }
 
-.collection-card:hover .card-img {
-    transform: scale(1.05); 
+.card-carousel::-webkit-scrollbar {
+    display: none; /* Hides scrollbar in Chrome/Safari */
 }
 
+/* Individual Images within the Carousel */
+.carousel-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    flex: 0 0 100%; /* Forces each image to take up 100% of the card width */
+    scroll-snap-align: start; /* Where it snaps */
+}
+
+/* Dark Gradient Overlay so text is readable */
+.card-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 80%; /* Covers the bottom 80% to protect text */
+    background: linear-gradient(180deg, rgba(10,10,10,0) 0%, rgba(10,10,10,0.85) 50%, rgba(10,10,10,1) 100%);
+    z-index: 2;
+    pointer-events: none; /* Ensures swipes pass through to the images */
+}
+
+/* Text Content Wrapper */
 .card-content {
     position: relative;
-    z-index: 2;
-    background: var(--card-bg);
+    z-index: 3;
     padding: 30px 20px;
-    height: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: flex-end;
+    align-items: center;
+    pointer-events: none; /* Ensures swipes over text pass through to images */
+}
+
+/* Re-enables clicking on the button specifically */
+.card-content .card-wa-btn {
+    pointer-events: auto;
+}
+
+/* Elegant Swipe Indicator */
+.swipe-indicator {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.65rem;
+    font-weight: 700;
+    letter-spacing: 0.25em;
+    color: rgba(219, 175, 84, 0.7); /* Subtle Gold */
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
 .card-content h2 {
     font-family: 'Cinzel', serif;
     font-size: clamp(1.4rem, 4vw, 1.8rem);
     font-weight: 700; 
-    margin: 0 0 12px 0;
+    margin: 0 0 8px 0;
     line-height: 1.2;
     letter-spacing: 1px;
 }
@@ -494,73 +119,44 @@ body {
     font-weight: 700;
 }
 
-.view-link {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 0.8rem;
-    font-weight: 700; 
-    letter-spacing: 2px;
-    color: var(--text-light);
-    text-decoration: none;
-    text-transform: uppercase;
-    transition: color 0.3s ease;
-}
-
-.view-link:hover {
-    color: var(--gold-accent);
-}
-
-/* Footer & Buttons */
-.collections-footer {
-    display: flex;
-    flex-direction: column;
+/* The In-Card Sleek WhatsApp Button */
+.card-wa-btn {
+    display: inline-flex;
     align-items: center;
-    width: 100%;
-    gap: 30px;
-}
-
-.collections-footer .whatsapp-btn {
-    font-size: 1rem;
-    font-weight: 800;
-    padding: 18px 40px; 
-    width: 100%;
-    max-width: 350px;
-    margin-bottom: 0;
-}
-
-.collections-footer .wa-icon {
-    width: 22px;
-    height: 22px;
-}
-
-.back-link {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 0.8rem;
-    font-weight: 700; 
-    letter-spacing: 0.25em;
-    color: rgba(255, 255, 255, 0.6);
-    text-decoration: none;
-    text-transform: uppercase;
-    transition: color 0.3s ease;
-}
-
-.back-link:hover {
+    justify-content: center;
+    background-color: transparent;
     color: var(--gold-accent);
+    border: 1px solid var(--gold-accent); /* Outline style */
+    text-decoration: none;
+    font-family: 'Montserrat', sans-serif;
+    padding: 10px 24px;
+    border-radius: 50px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    transition: all 0.3s ease;
+}
+
+.card-wa-btn:hover {
+    background-color: var(--gold-accent); /* Fills gold on hover */
+    color: #000000;
+    transform: translateY(-2px);
+}
+
+.card-wa-btn svg {
+    width: 16px;
+    height: 16px;
+    margin-right: 8px;
 }
 
 /* Responsive adjustments */
 @media (max-width: 600px) {
     .collections-grid {
         grid-template-columns: 1fr; 
-        gap: 20px;
+        gap: 25px;
     }
     
     .collection-card {
-        height: 350px;
-    }
-    
-    .whatsapp-btn {
-        width: 100%;
-        max-width: 320px;
-        padding: 16px 20px;
+        height: 400px;
     }
 }
