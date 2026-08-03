@@ -278,7 +278,7 @@ body {
     width: 100%;
     height: 60vh; 
     background: linear-gradient(to bottom, rgba(10, 10, 10, 0.1) 0%, rgba(10, 10, 10, 1) 100%), 
-                url('images/your-top-image.jpg') center/cover no-repeat; /* <-- Insert your image path here */
+                url('top-image.jpg') center/cover no-repeat; /* <-- Insert your image path here */
     z-index: -1; 
 }
 
